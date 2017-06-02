@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>
+        <%= title %>
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <link rel='stylesheet' href='/stylesheets/news.css'/>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+<div class="">
+    <ul>
+        <% data.forEach(function(item){ %>
+        <li class="list-group-item data-item">
+            <div class="data-group">
+                <div class="data-group-img pull-left">
+                    <img src="<%= item.thumbnail_pic_s %>"/>
+                </div>
+                <div class="data-group-text">
+                    <div class="data-group-text-title">
+                        <a href="<%= item.url %>" target="_blank"><%= item.title %></a>
+                    </div>
+                    <div class="data-group-text-content">
+                        <p><%= item.title %></p>
+                    </div>
+                    <div class="data-group-text-footer">
+                        <div class="data-group-text-footer-left pull-left">
+                            <span>来源:<%= item.author_name %></span>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <% }) %>
+    </ul>
+
+</div>
+</body>
+</html>
