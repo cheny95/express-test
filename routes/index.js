@@ -29,7 +29,7 @@ router.get('/news', function (req, res) {
         shishang: '时尚'
     };
     getNews(params).then(function (data) {
-        console.log('+++++++++++++++++++++++++:' + data);
+        console.log('数据输出:' + data);
         var data = JSON.parse(data);
         res.render('news', {title: data.result.data[0].category + '新闻', data: data.result.data});
     });
